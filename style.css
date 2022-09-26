@@ -9,12 +9,13 @@ body {
     background-color: #e9e5dd;
     max-width: 1000px;
     padding: 1rem;
+    background-color: black;
 
 }
 section{
 
 }
-div {
+div#gallery {
     max-width: 100vw;
     display: flex;
     flex-direction: row;
@@ -27,46 +28,68 @@ poster{
     position: relative;
     max-height: 900px;
     flex: 50%;
-    pointer-events: auto;
+    /* pointer-events: auto; */
 }
 
 img {
     width: 100%;
 }
 
+poster:hover div#content{
+    transition-duration: 1000ms;
+    opacity: 80%;
+    background-color: rgb(255, 255, 255);
+}
+
+h1{
+    color: white;
+}
 h2 {
     text-align: center;
+    color: white;
 }
+
+div#content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 h3{
     opacity: 0%;
     text-align: center;
     font-size: 2rem;
-    position: absolute;
+    /* position: absolute;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%; */
+
 }
 poster:hover h3 {
     transition-duration: 1000ms;
     opacity: 100%;
-    background-color: aliceblue;
 }
 
 p {
     /* pointer-events: none; */
     opacity: 0%;
-    top: 30%;
+    /* top: 30%;
     left: 50%;   
     transform: translate(-50%, -50%);
-    position: absolute;
+    position: absolute; */
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 poster:hover p {
     transition-duration: 1000ms;
     opacity: 100%;
-    background-color: aliceblue;
 }
 
 h4 {

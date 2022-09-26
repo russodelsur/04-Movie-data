@@ -40,22 +40,43 @@ let movieData = {
     const poster = document.createElement('poster');
     const image = document.createElement('img');
     const h3 = document.createElement('h3');
+    const h4 = document.createElement('h4');
     const p = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+    const div = document.createElement('div');
+    const br = document.createElement('br');
 
     const movieInfo = Object.values(movieData);
 
     image.src = `./assets/${Object.keys(movieData)[i]}.jpg`;
     image.alt = `an image of ${Object.keys(movieData)[i]} poster`
-    h3.textContent = Object.keys(movieData)[i].toUpperCase() + " - " + movieInfo[i].rating ;
+
+    h3.textContent = Object.keys(movieData)[i].toUpperCase() + " - IMDb " + movieInfo[i].rating ;
+
+    h4.textContent = movieInfo[i].year + "IMDb" + movieInfo[i].rating;
+
+    
 
     p.textContent = movieInfo[i].plot;
+    p2.textContent = "Starring: " + movieInfo[i].cast;
+    p3.textContent = "Runtime: " + movieInfo[i].runtime + " minutes";
+
+    div.id = "content";
+  
+    div.append(h3, p);
+
+    div.append(br);
+    div.append(p2);
+    div.append(br);
+    div.append(p3);
+    
     // p.textContent = movieInfo[i].cast;
     // p.textContent = movieInfo[i].year;
     
 
     poster.append(image);
-    poster.append(h3);
-    poster.append(p);
+    poster.append(div);
 
     movieGallery.append(poster);
 }
